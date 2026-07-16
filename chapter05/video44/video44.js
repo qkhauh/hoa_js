@@ -32,11 +32,11 @@ for (const sv of sinhvien) {
 
 const person = {
     age: 20,
-    name: "thú",
+    name: "adudu",
     email: "[EMAIL_ADDRESS]"
 }
 
 
 for (let key in person) {
     console.log(`${key}: ${person[key]}`);
-}
+} 
