@@ -8,3 +8,5 @@ nut.addEventListener("click", () => {
     nut.innerHTML = "bam lam cc gi";
     alert("do me m");
 })
+
+
