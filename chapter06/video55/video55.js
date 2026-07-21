@@ -4,7 +4,7 @@ const btn = document.getElementById("sumbtn");
 const input = document.getElementById("name");
 
 const tin = document.getElementById("tin");
-const prev = document.getElementById("prev");
+const prev = document.getElementById("tengicungdc");
 if (prev) {
     tin.innerHTML = `<b>${prev}</b>`
 }
@@ -12,7 +12,7 @@ if (prev) {
 
 btn.addEventListener("click", () => {
     console.log(input.value);
-    localStorage.setItem("gicungdc", input.value);
+    localStorage.setItem("tengicungdc", input.value);
     tin.innerHTML = `<b>${input.value}</b>`;
 })
 
