@@ -3,19 +3,28 @@ console.log(`video 70`);
 const savebtn = document.getElementById("btnsave");
 const nametodo = document.getElementById("name");
 
-savebtn.addEventListener('click', () => {
-    const mytodo = {
-        id: 1, name: nametodo.value
-    }
-    const currtodostr = localStorage.getItem("todo");
+function getrandomint(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
-    if (currtodostr) {
-        const currtodo = JSON.parse(currtodostr);
+if (savebtn) {
+    savebtn.addEventListener('click', () => {
+        const mytodo = {
+            id: getrandomint(1, 1000000), name: nametodo.value
+        }
+        const currtodostr = localStorage.getItem("todo");
 
-        currtodo.push(mytodo)
-        localStorage.setItem("todo", JSON.stringify([currtodo]));
+        if (currtodostr) {
+            const currtodo = JSON.parse(currtodostr);
 
-    } else {
-        localStorage.setItem("todo", JSON.stringify([mytodo]));
-    }
-})
+            currtodo.push(mytodo)
+            localStorage.setItem("todo", JSON.stringify(currtodo));
+        } else {
+            localStorage.setItem("todo", JSON.stringify([mytodo]));
+        }
+
+        window.location.href = "video70.html";
+    })
+}
